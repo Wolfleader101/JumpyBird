@@ -39,12 +39,13 @@ class Physics {
       console.log(deltaTime);
       ent.rb.vel.y += 9.8 * (deltaTime / 1000);
 
+      ent.pos.y += ent.rb.vel.y;
+      ent.pos.x += 150 * (deltaTime / 1000);
+
       if (ent.pos.y + 80 >= 450) {
         ent.pos.y = 450 - 80;
         ent.rb.vel.y = 0;
       }
-
-      ent.pos.y += ent.rb.vel.y;
 
       ent.draw();
     });
@@ -52,6 +53,9 @@ class Physics {
 
   OnKeyPressed() {
     if (keyCode == 32) {
+      this.entityList.forEach((ent) => {
+        ent.rb.vel.y -= 8;
+      });
     }
   }
 }
