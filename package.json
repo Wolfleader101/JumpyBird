@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "start": "tsc sketch.ts --watch"
+  },
+  "dependencies": {
+    "@types/p5": "^1.4.2"
+  }
+}
